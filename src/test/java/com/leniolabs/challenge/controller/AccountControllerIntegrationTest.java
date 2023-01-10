@@ -91,8 +91,6 @@ public class AccountControllerIntegrationTest {
 		mvc
 				.perform(get("/lenio-challenge/account/v1//calculate-fee/2").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isConflict());
-
-		
 	}
 
 }
