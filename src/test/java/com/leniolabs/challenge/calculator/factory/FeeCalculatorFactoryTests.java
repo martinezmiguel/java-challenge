@@ -10,34 +10,26 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class FeeCalculatorFactoryTests {
-	
+
 	@Autowired
 	private FeeCalculatorFactory feeCalculatorIF;
 
+	@Test
+	void testGetFeeCalculatorOK() throws FeeCalculatorNotFoundException {
+		assertNotNull(feeCalculatorIF.getFeeCalculator("corporate"));
+		assertNotNull(feeCalculatorIF.getFeeCalculator("personal"));
+	}
 
 	@Test
-	void getFeeCalculator() throws FeeCalculatorNotFoundException {
-		
-		assertNotNull(feeCalculatorIF.getFeeCalculator("corporate"));
-		
-		assertNotNull(feeCalculatorIF.getFeeCalculator("personal"));
-		
-		
-	}
-	
-	@Test
-	void getFeeCalculatorFail() throws FeeCalculatorNotFoundException {
-		
-		
+	void testGetFeeCalculatorFail() throws FeeCalculatorNotFoundException {
 		assertThrows(FeeCalculatorNotFoundException.class, new Executable() {
-			
+
 			@Override
 			public void execute() throws Throwable {
-				feeCalculatorIF.getFeeCalculator("Not Name"); 
-				
+				feeCalculatorIF.getFeeCalculator("Not Name");
+
 			}
 		});
-		
 	}
 
 }

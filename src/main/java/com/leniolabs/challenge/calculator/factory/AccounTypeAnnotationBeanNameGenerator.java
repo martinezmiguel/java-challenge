@@ -21,7 +21,7 @@ public class AccounTypeAnnotationBeanNameGenerator extends AnnotationBeanNameGen
 
 	public static final FullyQualifiedAnnotationBeanNameGenerator INSTANCE = new FullyQualifiedAnnotationBeanNameGenerator();
 
-	/**
+	/**	
 	 * 
 	 */
 	protected boolean isStereotypeWithNameValue(String annotationType, Set<String> metaAnnotationTypes,

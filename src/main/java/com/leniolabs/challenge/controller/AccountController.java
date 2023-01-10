@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.leniolabs.challenge.calculator.FeeCalculatorIF;
 import com.leniolabs.challenge.calculator.factory.FeeCalculatorFactory;
+import com.leniolabs.challenge.calculator.factory.FeeCalculatorNotFoundException;
 import com.leniolabs.challenge.model.Account;
 import com.leniolabs.challenge.service.AccounServiceIF;
 
@@ -55,7 +57,7 @@ public class AccountController {
 
 			Double fee = feeCalculator.calculateFee();
 
-			return ResponseEntity.accepted().body(fee);
+			return ResponseEntity.ok().body(fee);
 
 		} else {
 

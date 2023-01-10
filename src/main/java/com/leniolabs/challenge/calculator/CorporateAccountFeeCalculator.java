@@ -7,14 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CorporateAccountFeeCalculator implements FeeCalculatorIF{
 
-	
-	public CorporateAccountFeeCalculator() {
-		// TODO Auto-generated constructor stub
-		
-		System.out.println("test");
-	}
-	
-	
+
     @Override
     public Double calculateFee() {
         return 0.05;

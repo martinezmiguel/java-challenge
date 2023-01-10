@@ -7,7 +7,7 @@ package com.leniolabs.challenge.calculator.factory;
  * @author Miguel
  *
  */
-public class FeeCalculatorNotFoundException extends RuntimeException {
+public class FeeCalculatorNotFoundException extends IllegalArgumentException {
 
 	/**
 	 * 
